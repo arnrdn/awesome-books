@@ -4,7 +4,10 @@ const addBtn = document.getElementById('add');
 const bookList = document.getElementsByClassName('book-cards');
 const id = null;
 
-const bookArr = [];
+let bookArr = JSON.parse(localStorage.getItem('bookArr'));
+if (bookArr == null) {
+  bookArr = [];
+}
 
 function display() {
   bookList.innerHTML = '';
@@ -48,6 +51,7 @@ function remoteAt(id) {
   bookArr.splice(index, 1);
   element.parentElement.style.display = 'none';
   display();
+  console.log(parentElement);
 }
 
 window.addEventListener('load', () => {
