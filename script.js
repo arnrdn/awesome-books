@@ -28,3 +28,29 @@ function display() {
   localStorage.clear();
   localStorage.setItem('bookArr', JSON.stringify(bookArr));
 }
+
+addBtn.addEventListener('click', (e) => {
+  if (titleInput.value !== '') {
+    e.preventDefault();
+    const book = {
+      id: Math.random().toString(16).slice(2),
+      title: titleInput.value,
+      author: authorInput.value,
+    };
+    bookArr.push(book);
+    display();
+  }
+});
+
+function remoteAt(id) {
+  const element = document.getElementById(id);
+  const index = bookArr.findIndex((prop) => prop.id === id);
+  bookArr.splice(index, 1);
+  element.parentElement.style.display = 'none';
+  display();
+}
+
+window.addEventListener('load', () => {
+  display();
+  remoteAt(id);
+});
