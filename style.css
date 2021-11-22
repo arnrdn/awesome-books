@@ -3,4 +3,6 @@ form {
   flex-direction: column;
   width: 20%;
   gap: 0.7rem;
+  list-style-type: none;
 }
+
