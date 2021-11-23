@@ -9,12 +9,12 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 h1 {
-  margin-bottom: 2rem;
+  margin-bottom: 3%;
   font-weight: 700;
 }
 h2 {
   font-size: 1.6rem;
-  margin-bottom: 2rem;
+  margin-bottom: 7%;
   font-weight: 600;
 }
 h1,
@@ -24,7 +24,7 @@ input {
 }
 .book-list {
   border: 2px solid rgb(124, 103, 124);
-  width: 80%;
+  width: 60%;
   margin: 0 auto;
   border-radius: 4px;
 }
@@ -37,4 +37,58 @@ ul {
 }
 ul:nth-of-type(odd) {
   background-color: rgb(233, 215, 233);
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1.2rem;
+}
+
+ul:nth-of-type(odd) {
+  background-color: rgb(233, 215, 233);
+}
+
+button {
+  background-color: #fff;
+  border: 1px solid rgb(124, 103, 124);
+  color: rgb(124, 103, 124);
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.remove_btn {
+  padding: 0.4rem;
+  font-size: 0.8rem;
+}
+
+hr {
+  width: 7%;
+  margin: 5% auto;
+  background-color: rgb(124, 103, 124);
+}
+
+.add {
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  align-self: flex-end;
+}
+
+form {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  list-style-type: none;
+}
+
+input {
+  padding: 1rem;
+  border: 1px solid rgb(124, 103, 124);
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 0.8rem;
+  margin-bottom: 4%;
 }
