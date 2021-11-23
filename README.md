@@ -29,11 +29,11 @@ Additional description about the project and its features.
 - Twitter: @direakanbi
 - LinkedIn: @direakanbi
 
-## Author 2
 2.Nana Rodina
 
 - Github: @rdnrn
 - Linkeldin: @Nana Rodina
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!

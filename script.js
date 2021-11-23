@@ -7,6 +7,19 @@ let bookArray = JSON.parse(localStorage.getItem('bookArray'));
 if (bookArray == null) {
   bookArray = [];
 }
+
+class Book {
+  constructor(title, author, id) {
+    this.title = title;
+    this.author = author;
+    this.id = id;
+  }
+
+
+
+
+}
+
 function display() {
   bookList.innerHTML = '';
   bookArray.forEach((element) => {
@@ -46,7 +59,7 @@ addBtn.addEventListener('click', (e) => {
   }
 });
 
-function remoteAt(id) {
+const remoteAt = (id) => {
   const element = document.getElementById(id);
   const index = bookArray.findIndex((prop) => prop.id === id);
   bookArray.splice(index, 1);
