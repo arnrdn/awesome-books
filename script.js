@@ -9,9 +9,6 @@ const bookList = document.querySelector('.book-list');
 
 class Books {
   constructor(id, booksName, booksAu) {
-    if (bookArray == null) {
-      bookArray = [];
-    }
     this.booksName = booksName;
     this.booksAu = booksAu;
     this.id = id;
