@@ -6,6 +6,9 @@ const bookList = document.querySelector('.book-list');
 let bookArray = JSON.parse(localStorage.getItem('bookArray'));
 class Books {
   constructor(id, booksName, booksAu) {
+    if (bookArray == null) {
+      bookArray = [];
+    }
     this.booksName = booksName;
     this.booksAu = booksAu;
     this.id = id;
@@ -20,7 +23,7 @@ class Books {
       const Mybutton = document.createElement('button');
       Mybutton.classList = 'remove_btn';
       Mybutton.setAttribute('id', element.id);
-      Mybutton.setAttribute('onclick', `${'removeAt(this.id)'}`);
+      Mybutton.setAttribute('onclick', `${'Books.removeAt(this.id)'}`);
       MyList.innerHTML = element.booksName;
       MyListTwo.innerHTML = element.booksAu;
       Mybutton.innerHTML = 'Remove';
@@ -34,16 +37,20 @@ class Books {
     localStorage.clear();
     localStorage.setItem('bookArray', JSON.stringify(bookArray));
   }
-}
-if (bookArray == null) {
-  bookArray = [];
+
+  static removeAt (id) {
+    const element = document.getElementById(id);
+    const index = bookArray.findIndex((prop) => prop.id === id);
+    bookArray.splice(index, 1);
+    element.parentElement.style.display = 'none';
+    Books.display();
+  };
+
 }
 
 addBtn.addEventListener('click', (e) => {
   if (bookInput.value !== '') {
     e.preventDefault();
-    // create li
-    // var input = bookInput.value;
     const object = new Books(
       Math.random().toString(16).slice(2),
       bookInput.value,
@@ -54,15 +61,7 @@ addBtn.addEventListener('click', (e) => {
   }
 });
 
-const removeAt = (id) => {
-  const element = document.getElementById(id);
-  const index = bookArray.findIndex((prop) => prop.id === id);
-  bookArray.splice(index, 1);
-  element.parentElement.style.display = 'none';
-  Books.display();
-};
-
 window.addEventListener('load', () => {
   Books.display();
-  removeAt(id);
+  Books.removeAt(id);
 });
