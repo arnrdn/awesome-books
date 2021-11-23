@@ -1,7 +1,40 @@
-form {
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: rgb(251, 248, 252);
+  text-align: center;
+  padding: 2rem 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+h1 {
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+h1,
+h2,
+input {
+  color: rgb(68, 55, 68);
+}
+.book-list {
+  border: 2px solid rgb(124, 103, 124);
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 4px;
+}
+ul {
+  list-style: none;
   display: flex;
-  flex-direction: column;
-  width: 20%;
-  gap: 0.7rem;
-  list-style-type: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1.2rem;
+}
+ul:nth-of-type(odd) {
+  background-color: rgb(233, 215, 233);
 }
