@@ -38,14 +38,13 @@ class Books {
     localStorage.setItem('bookArray', JSON.stringify(bookArray));
   }
 
-  
-static remoteAt(id) {
-  const element = document.getElementById(id);
-  const index = bookArray.findIndex((prop) => prop.id === id);
-  bookArray.splice(index, 1);
-  element.parentElement.style.display = 'none';
-  Books.display();
-}
+  static remoteAt(id) {
+    const element = document.getElementById(id);
+    const index = bookArray.findIndex((prop) => prop.id === id);
+    bookArray.splice(index, 1);
+    element.parentElement.style.display = 'none';
+    Books.display();
+  }
 }
 
 addBtn.addEventListener('click', (e) => {
