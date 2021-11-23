@@ -1,3 +1,6 @@
+/* eslint-disable max-classes-per-file */
+/* eslint-disable no-unused-vars */
+
 const id = null;
 const bookInput = document.querySelector('#txt');
 const bookInputOne = document.querySelector('#txtOne');
@@ -10,8 +13,10 @@ class Books {
     this.booksAu = booksAu;
     this.id = id;
   }
+}
 
-  static bookStore() {
+class BookStore {
+  static getBooks() {
     let bookArray;
     if (localStorage.getItem('bookArray') === null) {
       bookArray = [];
@@ -21,8 +26,37 @@ class Books {
     return bookArray;
   }
 
+  static addButton() {
+    const bookArray = BookStore.getBooks();
+    addBtn.addEventListener('click', (e) => {
+      if (bookInput.value !== '') {
+        e.preventDefault();
+        const object = new Books(
+          Math.random().toString(16).slice(2),
+          bookInput.value,
+          bookInputOne.value,
+        );
+        bookArray.push(object);
+        BookStore.display();
+      }
+      localStorage.setItem('bookArray', JSON.stringify(bookArray));
+    });
+  }
+
+  static removeAt(id) {
+    const bookArray = BookStore.getBooks();
+    const element = document.getElementById(id);
+    const index = bookArray.findIndex((prop) => prop.id === id);
+    bookArray.splice(index, 1);
+    element.parentElement.style.display = 'none';
+    BookStore.display();
+    localStorage.setItem('bookArray', JSON.stringify(bookArray));
+  }
+}
+
+class BookDisplay {
   static display() {
-    const bookArray = Books.bookStore();
+    const bookArray = BookStore.getBooks();
     bookList.innerHTML = '';
     bookArray.forEach((element) => {
       const MyBooks = document.createElement('ul');
@@ -45,35 +79,8 @@ class Books {
     localStorage.clear();
     localStorage.setItem('bookArray', JSON.stringify(bookArray));
   }
-
-  static addButton() {
-    const bookArray = Books.bookStore();
-    addBtn.addEventListener('click', (e) => {
-      if (bookInput.value !== '') {
-        e.preventDefault();
-        const object = new Books(
-          Math.random().toString(16).slice(2),
-          bookInput.value,
-          bookInputOne.value,
-        );
-        bookArray.push(object);
-        Books.display();
-      }
-    });
-  }
-
-  static removeAt(id) {
-    const bookArray = Books.bookStore();
-    const element = document.getElementById(id);
-    const index = Books.bookArray.findIndex((prop) => prop.id === id);
-    bookArray.splice(index, 1);
-    element.parentElement.style.display = 'none';
-    Books.display();
-  }
 }
 
-window.addEventListener('load', () => {
-  Books.addButton();
-  Books.display();
-  Books.removeAt(id);
-});
+// document.addEventListener('DOMContentLoaded', BookStore.display);
+
+// addBtn.addEventListener('submit', BookStore.addButton);
