@@ -3,7 +3,7 @@ const bookInput = document.querySelector('#txt');
 const bookInputOne = document.querySelector('#txtOne');
 const addBtn = document.querySelector('.add');
 const bookList = document.querySelector('.book-list');
-let bookArray = JSON.parse(localStorage.getItem('bookArray'));
+
 class Books {
   constructor(id, booksName, booksAu) {
     this.booksName = booksName;
@@ -11,7 +11,18 @@ class Books {
     this.id = id;
   }
 
+  static bookStore() {
+    let bookArray;
+    if (localStorage.getItem('bookArray') === null) {
+      bookArray = [];
+    } else {
+      bookArray = JSON.parse(localStorage.getItem('bookArray'));
+    }
+    return bookArray;
+  }
+
   static display() {
+    const bookArray = Books.bookStore();
     bookList.innerHTML = '';
     bookArray.forEach((element) => {
       const MyBooks = document.createElement('ul');
@@ -34,35 +45,35 @@ class Books {
     localStorage.clear();
     localStorage.setItem('bookArray', JSON.stringify(bookArray));
   }
-}
-if (bookArray == null) {
-  bookArray = [];
-}
 
-addBtn.addEventListener('click', (e) => {
-  if (bookInput.value !== '') {
-    e.preventDefault();
-    // create li
-    // var input = bookInput.value;
-    const object = new Books(
-      Math.random().toString(16).slice(2),
-      bookInput.value,
-      bookInputOne.value,
-    );
-    bookArray.push(object);
+  static addButton() {
+    const bookArray = Books.bookStore();
+    addBtn.addEventListener('click', (e) => {
+      if (bookInput.value !== '') {
+        e.preventDefault();
+        const object = new Books(
+          Math.random().toString(16).slice(2),
+          bookInput.value,
+          bookInputOne.value,
+        );
+        bookArray.push(object);
+        Books.display();
+      }
+    });
+  }
+
+  static removeAt(id) {
+    const bookArray = Books.bookStore();
+    const element = document.getElementById(id);
+    const index = Books.bookArray.findIndex((prop) => prop.id === id);
+    bookArray.splice(index, 1);
+    element.parentElement.style.display = 'none';
     Books.display();
   }
-});
-
-const removeAt = (id) => {
-  const element = document.getElementById(id);
-  const index = bookArray.findIndex((prop) => prop.id === id);
-  bookArray.splice(index, 1);
-  element.parentElement.style.display = 'none';
-  Books.display();
-};
+}
 
 window.addEventListener('load', () => {
+  Books.addButton();
   Books.display();
-  removeAt(id);
+  Books.removeAt(id);
 });
