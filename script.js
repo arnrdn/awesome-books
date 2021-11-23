@@ -44,10 +44,10 @@ addBtn.addEventListener('click', (e) => {
     e.preventDefault();
     // create li
     // var input = bookInput.value;
-    const object = new Books ( 
-       Math.random().toString(16).slice(2),
-       bookInput.value,
-       bookInputOne.value,
+    const object = new Books(
+      Math.random().toString(16).slice(2),
+      bookInput.value,
+      bookInputOne.value,
     );
     bookArray.push(object);
     Books.display();
@@ -60,9 +60,9 @@ const removeAt = (id) => {
   bookArray.splice(index, 1);
   element.parentElement.style.display = 'none';
   Books.display();
-}
+};
 
 window.addEventListener('load', () => {
-   Books.display();
+  Books.display();
   removeAt(id);
 });
