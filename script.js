@@ -9,6 +9,9 @@ const bookList = document.querySelector('.book-list');
 
 class Books {
   constructor(id, booksName, booksAu) {
+    if (bookArray == null) {
+      bookArray = [];
+    }
     this.booksName = booksName;
     this.booksAu = booksAu;
     this.id = id;
@@ -65,7 +68,7 @@ class BookDisplay {
       const Mybutton = document.createElement('button');
       Mybutton.classList = 'remove_btn';
       Mybutton.setAttribute('id', element.id);
-      Mybutton.setAttribute('onclick', `${'removeAt(this.id)'}`);
+      Mybutton.setAttribute('onclick', `${'Books.removeAt(this.id)'}`);
       MyList.innerHTML = element.booksName;
       MyListTwo.innerHTML = element.booksAu;
       Mybutton.innerHTML = 'Remove';
