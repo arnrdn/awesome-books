@@ -13,34 +13,61 @@
 </head>
 
 <body>
-  <h1>Awesome books</h1>
 
-  <nav class="nav_wrapper">
-    <div class="menu_wrapper">
+  <header>
+    <nav class="nav_wrapper">
+      <div class="menu_wrapper">
         <div class="logo">Awesome Books</div>
         <ul class="menu_list_wrapper">
-            <li class="list"><a class="menue_txt" href="#bookList" id ="list">List</a></li>
-            <li class="list"><a class="menue_txt" href="#addNew" id="add">Add new</a></li>
-            <li class="list"><a class="menue_txt" id="cont_txt" href="#contactInfo">Contact</a></li>
+          <li class="list"><a class="menue_txt" href="#bookList" id="list">List</a></li>
+          <div>|</div>
+          <li class="list"><a class="menue_txt" href="#addNew" id="add">Add new</a></li>
+          <div>|</div>
+          <li class="list"><a class="menue_txt" id="cont_txt" href="#contactInfo">Contact</a></li>
         </ul>
-    </div>
-</nav>
-
-  <div class="book-list">
-
+      </div>
+    </nav>
+  </header>
+  <div class="time-container">
+    <span class="time"></span>
   </div>
 
-  <span id="nav_span">
-        
-  </span>
-  
-  <hr>
+  <div class="book-list-container">
+    <h1>Awesome books</h1>
+    <div class="book-list">
+
+    </div>
+  </div>
+  <!-- <span id="nav_span">
+
+  </span> -->
   <form>
     <h2>Add a new book</h2>
     <input type="text" name="text" id="txt" placeholder="Title" required>
     <input type="text" name="text" id="txtOne" placeholder="Author" required>
     <button type="submit" class="add">Add</button>
   </form>
+
+  <div class="contact-us">
+    <h2>
+      Contact information
+    </h2>
+    <p>Do have any questions or you jus want to say "Hello"? <br>
+      You can reach out to us!</p>
+    <ul class="contact-info">
+      <li>Our e-mail books@mail.com</li>
+      <li>Our phone number</li>
+      <li>Our address Street st. House, Party!</li>
+    </ul>
+  </div>
+
+  <footer>
+    <div>
+      Copyright
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
   <script src="script.js"></script>
 </body>
 

@@ -6,8 +6,43 @@
 body {
   background-color: rgb(251, 248, 252);
   text-align: center;
-  padding: 2rem 1rem;
   font-family: 'Poppins', sans-serif;
+}
+
+footer {
+  padding: 1rem 3rem;
+  margin: auto 0;
+}
+
+header,
+footer {
+  background-color: rgb(233, 215, 233);
+}
+
+.time-container {
+  padding: 1rem 3rem;
+  text-align: end;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(155, 126, 155);
+}
+
+a:hover {
+  color: rgb(48, 38, 48);
+}
+
+.menu_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 4rem;
+}
+
+.menu_list_wrapper div {
+  margin: 0 1.4rem;
+  color: rgb(68, 55, 68);
 }
 
 h1 {
@@ -17,7 +52,7 @@ h1 {
 
 h2 {
   font-size: 1.6rem;
-  margin-bottom: 7%;
+  margin-bottom: 5%;
   font-weight: 600;
 }
 
@@ -86,4 +121,23 @@ input {
   font-weight: 500;
   font-size: 0.8rem;
   margin-bottom: 4%;
+}
+
+.contact-us {
+  width: 60%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contact-us h2 {
+  text-align: center;
+}
+
+.contact-us ul {
+  list-style: circle;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 60%;
+  margin: 1rem auto;
+  background-color: rgb(251, 248, 252);
 }
