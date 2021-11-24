@@ -1,9 +1,12 @@
-const now = new Date();
-const dateTime = document.querySelectorAll('span');
-for (let i = 0; i < dateTime.length; i += 1) {
-  dateTime[i].innerHTML = now.toString();
+/* eslint-disable no-undef */
+
+function setDate() {
+  const date = document.getElementById('date');
+  const { DateTime } = luxon;
+  date.innerHTML = DateTime.now().toFormat('LLL dd yyyy, t');
 }
-dateTime.innerHTML = now.toString();
+
+setDate();
 
 const list = document.querySelector('#list');
 const addNew = document.querySelector('#add');
