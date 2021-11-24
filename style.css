@@ -44,7 +44,7 @@ a:hover {
   padding: 0.7rem 4rem;
 }
 
-.menu_list_wrapper div {
+.menu_list_wrapper li:nth-of-type(even) {
   margin: 0 1.4rem;
   color: rgb(68, 55, 68);
 }
@@ -133,7 +133,6 @@ input {
 
 .contact-us {
   width: 30%;
-  margin: 0 auto;
   text-align: left;
   display: flex;
   justify-content: center;
