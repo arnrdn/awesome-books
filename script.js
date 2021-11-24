@@ -19,16 +19,13 @@ class Books {
     bookArray.forEach((element) => {
       const MyBooks = document.createElement('ul');
       const MyList = document.createElement('li');
-      const MyListTwo = document.createElement('li');
       const Mybutton = document.createElement('button');
       Mybutton.classList = 'remove_btn';
       Mybutton.setAttribute('id', element.id);
       Mybutton.setAttribute('onclick', `${'Books.remoteAt(this.id)'}`);
-      MyList.innerHTML = element.booksName;
-      MyListTwo.innerHTML = element.booksAu;
+      MyList.innerHTML = `''${element.booksName}'' by ${element.booksAu}`;
       Mybutton.innerHTML = 'Remove';
       MyBooks.appendChild(MyList);
-      MyBooks.appendChild(MyListTwo);
       MyBooks.appendChild(Mybutton);
       bookList.appendChild(MyBooks);
       bookInput.value = '';

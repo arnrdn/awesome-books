@@ -13,17 +13,59 @@
 </head>
 
 <body>
-  <h1>Awesome books</h1>
-  <div class="book-list">
-
+  <header>
+    <nav class="nav_wrapper">
+      <div class="menu_wrapper">
+        <div class="logo">Awesome Books</div>
+        <ul class="menu_list_wrapper">
+          <li class="list"><a class="menue_txt" href="#bookList" id="list">List</a></li>
+          <li>|</li>
+          <li class="list"><a class="menue_txt" href="#addNew" id="add">Add new</a></li>
+          <li>|</li>
+          <li class="list"><a class="menue_txt" id="cont_txt" href="#contactInfo">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <div class="time-container">
+    <span id="date" class="date"></span>
   </div>
-  <hr>
-  <form>
+
+  <div class="book-list-container">
+    <h1>Awesome books</h1>
+    <div class="book-list">
+
+    </div>
+  </div>
+
+  <form class="addNew">
     <h2>Add a new book</h2>
     <input type="text" name="text" id="txt" placeholder="Title" required>
     <input type="text" name="text" id="txtOne" placeholder="Author" required>
     <button type="submit" class="add">Add</button>
   </form>
+
+  <div class="contact-us">
+    <h2>
+      Contact information
+    </h2>
+    <p>Do have any questions or you jus want to say "Hello"? <br>
+      You can reach out to us!</p>
+    <ul class="contact-info">
+      <li>Our e-mail books@mail.com</li>
+      <li>Our phone number</li>
+      <li>Our address Street st. House, Party!</li>
+    </ul>
+  </div>
+
+  <footer>
+    <div>
+      Copyright
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.1/build/global/luxon.min.js"></script>
+  <script src="nav.js"></script>
   <script src="script.js"></script>
 </body>
 
