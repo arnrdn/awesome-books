@@ -4,7 +4,7 @@
 > I created this project by first designing it using wireframes.
 
 # Live View
-> To view this project live, please visit this [page]()
+> To view this project live, please visit this [page](https://rdnrn.github.io/awesome-books/)
 
 # Getting Started
 
